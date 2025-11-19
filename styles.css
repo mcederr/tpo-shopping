@@ -1,0 +1,547 @@
+/* 
+ * Estilos personalizados para el Centro Comercial Plaza Central
+ * Principios de accesibilidad WCAG 2.1 (Niveles A y AA) aplicados
+ */
+
+/* ============================================
+   Variables CSS para mantener consistencia de colores y facilitar mantenimiento
+   ============================================ */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    
+    /* Colores con buen contraste para accesibilidad (WCAG AA) */
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --bg-light: #f8f9fa;
+    --bg-dark: #212529;
+    
+    /* Espaciado consistente */
+    --spacing-unit: 1rem;
+}
+
+/* ============================================
+   Configuración Base - Accesibilidad y Usabilidad
+   ============================================ */
+
+/* Reset y configuración de fuente para mejor legibilidad */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: #fff;
+    padding-top: 76px; /* Espacio para navbar fijo */
+}
+
+/* Enfoque visible para navegación por teclado (accesibilidad) */
+*:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Mejora en la visibilidad de enlaces para accesibilidad */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+/* ============================================
+   Navegación
+   ============================================ */
+
+/* Navbar fijo con sombra para mejor visibilidad */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-height: 76px;
+}
+
+/* Mejora en los enlaces de navegación */
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
+
+/* ============================================
+   Hero Section - Sección principal
+   ============================================ */
+
+.hero-section {
+    position: relative;
+    min-height: 500px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+    display: flex;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=600&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Overlay para mejorar contraste del texto sobre la imagen */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Contraste adecuado WCAG AA */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mejora en la legibilidad del texto del hero */
+.hero-section h1,
+.hero-section p {
+    text-shadow: 2px 2px 4px rgb(255, 255, 255); /* Mejora contraste */
+}
+
+/* ============================================
+   Encabezados de Página
+   ============================================ */
+
+.page-header {
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   Tipografía - Jerarquía semántica clara
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-unit);
+    color: var(--text-primary);
+}
+
+/* Contraste adecuado para textos sobre fondos de color */
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary p,
+.bg-success h1,
+.bg-success h2,
+.bg-success h3,
+.bg-success p,
+.bg-danger h1,
+.bg-danger h2,
+.bg-danger h3,
+.bg-danger p,
+.bg-info h1,
+.bg-info h2,
+.bg-info h3,
+.bg-info p,
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark p {
+    color: #fff; /* Alto contraste sobre fondos oscuros */
+}
+
+.bg-warning h1,
+.bg-warning h2,
+.bg-warning h3 {
+    color: var(--text-primary); /* Contraste adecuado sobre fondo amarillo */
+}
+
+/* ============================================
+   Tarjetas y Componentes
+   ============================================ */
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+}
+
+/* Tarjetas de ofertas con efecto destacado */
+.offer-card {
+    position: relative;
+}
+
+.offer-card .badge {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+}
+
+/* Mejora en imágenes de tarjetas */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* ============================================
+   Mapa Interactivo - Hotspots
+   ============================================ */
+
+.map-container {
+    position: relative;
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+#map-image {
+    display: block;
+    border-radius: 4px;
+}
+
+/* Estilos para hotspots (marcadores interactivos) */
+.hotspot {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--danger-color);
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+/* Estado hover para hotspots */
+.hotspot:hover,
+.hotspot:focus {
+    background-color: #bb2d3b;
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Estado activo para hotspots */
+.hotspot.active {
+    background-color: var(--success-color);
+    transform: translate(-50%, -50%) scale(1.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+/* Animación de pulso para hotspots */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
+
+.hotspot.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* ============================================
+   Formularios - Accesibilidad
+   ============================================ */
+
+/* Mejora en campos de formulario */
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estados de validación con indicadores visuales claros */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: var(--danger-color);
+}
+
+.form-control.is-valid,
+.form-select.is-valid {
+    border-color: var(--success-color);
+}
+
+/* Mensajes de error accesibles */
+.invalid-feedback {
+    display: block;
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.valid-feedback {
+    display: block;
+    color: var(--success-color);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* ============================================
+   Chat Bot
+   ============================================ */
+
+#chat-container {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.chat-message {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-message .alert {
+    margin-bottom: 0;
+    max-width: 80%;
+}
+
+.user-message {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-message .alert {
+    margin-bottom: 0;
+    max-width: 80%;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Botones de preguntas rápidas */
+.quick-question {
+    transition: all 0.3s ease;
+}
+
+.quick-question:hover,
+.quick-question:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* ============================================
+   Resultados de Búsqueda
+   ============================================ */
+
+#search-results {
+    min-height: 50px;
+}
+
+.search-result-item {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+    background-color: var(--bg-light);
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+footer {
+    margin-top: auto;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+    color: white;
+    text-decoration: underline;
+}
+
+/* ============================================
+   Responsive Design - Mobile First
+   ============================================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .hero-section {
+        min-height: 400px;
+        background-attachment: scroll; /* Mejor rendimiento en móviles */
+    }
+    
+    .hotspot {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px;
+    }
+    
+    .hero-section {
+        min-height: 300px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    
+    .hotspot {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .card-img-top {
+        height: 150px;
+    }
+    
+    /* Mejora en formularios en móviles */
+    .form-control,
+    .form-select {
+        font-size: 16px; /* Previene zoom automático en iOS */
+    }
+    
+    #chat-container {
+        height: 300px;
+    }
+}
+
+/* ============================================
+   Mejoras de Accesibilidad
+   ============================================ */
+
+/* Skip link para navegación por teclado */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Indicadores visuales para contenido oculto pero accesible a lectores de pantalla */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Mejora en objetos que solo transmiten información por color */
+.color-indicator {
+    /* Asegurar que además del color haya un símbolo o texto */
+}
+
+/* ============================================
+   Animaciones y Transiciones Suaves
+   ============================================ */
+
+/* Transiciones suaves para mejor UX */
+button,
+.btn,
+a {
+    transition: all 0.3s ease;
+}
+
+/* Prevenir animaciones para usuarios que prefieren movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   Utilidades
+   ============================================ */
+
+.object-cover {
+    object-fit: cover;
+}
+
+/* Espaciado consistente */
+.mb-section {
+    margin-bottom: 4rem;
+}
+
+/* Contraste mejorado para textos sobre imágenes */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+

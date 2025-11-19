@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de contacto y asistente virtual del Centro Comercial Plaza Central">
+    <title>Contacto - Centro Comercial Plaza Central</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Ir al inicio - Centro Comercial Plaza Central">
+                <i class="bi bi-shop" aria-hidden="true"></i> Plaza Central
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="entretenimientos.html">Entretenimientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="locales-comerciales.html">Locales Comerciales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ofertas.html">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gastronomia.html">Gastronomía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de página -->
+    <header class="page-header bg-dark text-white py-5 mt-5" role="banner">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Contacto</h1>
+            <p class="lead">Estamos aquí para ayudarte</p>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main role="main">
+        <!-- Información de contacto -->
+        <section class="py-5" aria-labelledby="titulo-info">
+            <div class="container">
+                <h2 id="titulo-info" class="text-center mb-5 h1">Información de Contacto</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="bi bi-geo-alt-fill text-primary display-4 mb-3" aria-hidden="true"></i>
+                            <h3 class="h5">Dirección</h3>
+                            <p>Av. Principal 1234<br>Ciudad, Provincia<br>Código Postal: 1234</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="bi bi-telephone-fill text-success display-4 mb-3" aria-hidden="true"></i>
+                            <h3 class="h5">Teléfono</h3>
+                            <p>Central: (123) 456-7890<br>WhatsApp: (123) 456-7891<br>Emergencias: (123) 456-7892</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="bi bi-envelope-fill text-info display-4 mb-3" aria-hidden="true"></i>
+                            <h3 class="h5">Email</h3>
+                            <p>info@plazacentral.com<br>ventas@plazacentral.com<br>soporte@plazacentral.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario de contacto -->
+        <section class="py-5 bg-light" aria-labelledby="titulo-formulario">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 id="titulo-formulario" class="text-center mb-4">Envíanos un Mensaje</h2>
+                        <form id="contact-form" novalidate aria-label="Formulario de contacto">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre completo <span class="text-danger" aria-label="requerido">*</span></label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="nombre" 
+                                       name="nombre" 
+                                       required 
+                                       aria-required="true"
+                                       aria-describedby="nombre-help">
+                                <div id="nombre-help" class="form-text">Ingresa tu nombre completo</div>
+                                <div class="invalid-feedback">Por favor ingresa tu nombre completo.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email <span class="text-danger" aria-label="requerido">*</span></label>
+                                <input type="email" 
+                                       class="form-control" 
+                                       id="email" 
+                                       name="email" 
+                                       required 
+                                       aria-required="true"
+                                       aria-describedby="email-help">
+                                <div id="email-help" class="form-text">Ingresa un email válido</div>
+                                <div class="invalid-feedback">Por favor ingresa un email válido.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" 
+                                       class="form-control" 
+                                       id="telefono" 
+                                       name="telefono"
+                                       aria-describedby="telefono-help">
+                                <div id="telefono-help" class="form-text">Opcional: tu número de teléfono</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="asunto" class="form-label">Asunto <span class="text-danger" aria-label="requerido">*</span></label>
+                                <select class="form-select" 
+                                        id="asunto" 
+                                        name="asunto" 
+                                        required 
+                                        aria-required="true"
+                                        aria-describedby="asunto-help">
+                                    <option value="">Selecciona un asunto</option>
+                                    <option value="informacion">Información General</option>
+                                    <option value="locales">Información sobre Locales</option>
+                                    <option value="eventos">Eventos y Actividades</option>
+                                    <option value="reclamo">Reclamos o Sugerencias</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                                <div id="asunto-help" class="form-text">Selecciona el motivo de tu consulta</div>
+                                <div class="invalid-feedback">Por favor selecciona un asunto.</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mensaje" class="form-label">Mensaje <span class="text-danger" aria-label="requerido">*</span></label>
+                                <textarea class="form-control" 
+                                          id="mensaje" 
+                                          name="mensaje" 
+                                          rows="5" 
+                                          required 
+                                          aria-required="true"
+                                          aria-describedby="mensaje-help"></textarea>
+                                <div id="mensaje-help" class="form-text">Escribe tu mensaje o consulta</div>
+                                <div class="invalid-feedback">Por favor escribe tu mensaje.</div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" 
+                                       class="form-check-input" 
+                                       id="acepto" 
+                                       name="acepto" 
+                                       required
+                                       aria-required="true">
+                                <label class="form-check-label" for="acepto">
+                                    Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a> <span class="text-danger" aria-label="requerido">*</span>
+                                </label>
+                                <div class="invalid-feedback">Debes aceptar los términos y condiciones.</div>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="bi bi-send-fill" aria-hidden="true"></i> Enviar Mensaje
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Mensaje de éxito (oculto inicialmente) -->
+                        <div id="mensaje-exito" class="alert alert-success mt-4 d-none" role="alert" aria-live="polite">
+                            <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                            <strong>¡Mensaje enviado!</strong> Te contactaremos pronto.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Bot -->
+        <section class="py-5" aria-labelledby="titulo-chatbot">
+            <div class="container">
+                <h2 id="titulo-chatbot" class="text-center mb-4">Asistente Virtual</h2>
+                <p class="text-center text-muted mb-4">
+                    Haz una pregunta rápida y nuestro asistente virtual te ayudará
+                </p>
+                
+                <!-- Contenedor del chatbot -->
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <h3 class="h5 mb-0">
+                                    <i class="bi bi-robot" aria-hidden="true"></i> Chat Bot Plaza Central
+                                </h3>
+                                <button type="button" class="btn btn-sm btn-light" id="toggle-chat" aria-label="Expandir o contraer chat">
+                                    <i class="bi bi-dash-lg" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="card-body" id="chat-container" style="height: 400px; overflow-y: auto;">
+                                <!-- Mensajes del chat se agregan dinámicamente -->
+                                <div class="chat-message bot-message mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-robot text-primary me-2" aria-hidden="true"></i>
+                                        <div class="alert alert-info mb-0">
+                                            <strong>Bot:</strong> ¡Hola! Soy el asistente virtual de Plaza Central. 
+                                            ¿En qué puedo ayudarte hoy? Puedes preguntarme sobre horarios, locales, 
+                                            servicios u ofertas especiales.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <form id="chat-form" class="d-flex gap-2">
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="chat-input" 
+                                           placeholder="Escribe tu pregunta..." 
+                                           aria-label="Campo de entrada para preguntas al chatbot"
+                                           autocomplete="off">
+                                    <button type="submit" class="btn btn-primary" aria-label="Enviar mensaje al chatbot">
+                                        <i class="bi bi-send-fill" aria-hidden="true"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Sugerencias rápidas -->
+                        <div class="mt-3">
+                            <p class="small text-muted mb-2">Preguntas frecuentes:</p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-outline-primary btn-sm quick-question" data-question="¿Cuáles son los horarios?">
+                                    <i class="bi bi-clock" aria-hidden="true"></i> Horarios
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm quick-question" data-question="¿Dónde está el estacionamiento?">
+                                    <i class="bi bi-parking" aria-hidden="true"></i> Estacionamiento
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm quick-question" data-question="¿Qué ofertas hay disponibles?">
+                                    <i class="bi bi-tag" aria-hidden="true"></i> Ofertas
+                                </button>
+                                <button class="btn btn-outline-primary btn-sm quick-question" data-question="¿Cómo llego al centro comercial?">
+                                    <i class="bi bi-geo-alt" aria-hidden="true"></i> Cómo llegar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa de ubicación -->
+        <section class="py-5 bg-light" aria-labelledby="titulo-mapa">
+            <div class="container">
+                <h2 id="titulo-mapa" class="text-center mb-4">¿Cómo Llegar?</h2>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.693836462!2d-64.18106168515606!3d-31.420085981405153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a32dcf5d747f%3A0x40373220b29140ac!2sPlaza%20San%20Mart%C3%ADn%2C%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar" 
+                                    title="Mapa de ubicación del Centro Comercial Plaza Central"
+                                    allowfullscreen 
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Centro Comercial Plaza Central</h3>
+                    <p>Av. Principal 1234, Ciudad</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Email: info@plazacentral.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Horarios</h3>
+                    <p>Lunes a Viernes: 10:00 - 22:00</p>
+                    <p>Sábados y Domingos: 10:00 - 23:00</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3" aria-label="Facebook del centro comercial">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram del centro comercial">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white" aria-label="Twitter del centro comercial">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Centro Comercial Plaza Central. Todos los derechos reservados.</p>
+                <p class="mt-2 mb-0">
+                    <a href="#" class="text-white-50">Accesibilidad</a> | 
+                    <a href="#" class="text-white-50">Privacidad</a> | 
+                    <a href="#" class="text-white-50">Términos y Condiciones</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
+

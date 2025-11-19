@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Promociones y descuentos destacados del Centro Comercial Plaza Central">
+    <title>Ofertas - Centro Comercial Plaza Central</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Ir al inicio - Centro Comercial Plaza Central">
+                <i class="bi bi-shop" aria-hidden="true"></i> Plaza Central
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="entretenimientos.html">Entretenimientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="locales-comerciales.html">Locales Comerciales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ofertas.html" aria-current="page">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gastronomia.html">Gastronomía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de página -->
+    <header class="page-header bg-danger text-white py-5 mt-5" role="banner">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Ofertas Especiales</h1>
+            <p class="lead">Las mejores promociones y descuentos disponibles</p>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main role="main">
+        <!-- Ofertas destacadas -->
+        <section class="py-5" aria-labelledby="titulo-destacadas">
+            <div class="container">
+                <h2 id="titulo-destacadas" class="text-center mb-5 h1">Ofertas Destacadas</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm offer-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=300&fit=crop" 
+                                     class="card-img-top" 
+                                     alt="Oferta especial: 50% de descuento en ropa de verano">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">-50%</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Ropa de Verano</h3>
+                                <p class="card-text">
+                                    <strong>Fashion Style</strong> - Descuento del 50% en toda la colección de verano. 
+                                    Válido hasta fin de mes.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> Hasta el 30/12/2024
+                                    </small>
+                                    <a href="locales-comerciales.html" class="btn btn-sm btn-primary" aria-label="Ver más sobre la oferta de ropa de verano">
+                                        Ver más
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm offer-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=400&h=300&fit=crop" 
+                                     class="card-img-top" 
+                                     alt="Oferta especial: 30% de descuento en productos de electrónica">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">-30%</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Electrónica</h3>
+                                <p class="card-text">
+                                    <strong>TechWorld</strong> - 30% de descuento en smartphones, tablets y accesorios. 
+                                    Financiación disponible.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> Hasta agotar stock
+                                    </small>
+                                    <a href="locales-comerciales.html" class="btn btn-sm btn-primary" aria-label="Ver más sobre la oferta de electrónica">
+                                        Ver más
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm offer-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" 
+                                     class="card-img-top" 
+                                     alt="Oferta especial: 2x1 en equipamiento deportivo">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">2x1</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Equipamiento Deportivo</h3>
+                                <p class="card-text">
+                                    <strong>SportZone</strong> - Promoción 2x1 en calzado deportivo y ropa de entrenamiento. 
+                                    Aplica en productos seleccionados.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> Esta semana
+                                    </small>
+                                    <a href="locales-comerciales.html" class="btn btn-sm btn-primary" aria-label="Ver más sobre la oferta de equipamiento deportivo">
+                                        Ver más
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm offer-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop" 
+                                     class="card-img-top" 
+                                     alt="Oferta especial: 25% de descuento en productos de belleza">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">-25%</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Belleza y Cosméticos</h3>
+                                <p class="card-text">
+                                    <strong>Beauty Plus</strong> - 25% de descuento en perfumes, maquillaje y cuidado 
+                                    personal. Compra mínima requerida.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> Todo el mes
+                                    </small>
+                                    <a href="locales-comerciales.html" class="btn btn-sm btn-primary" aria-label="Ver más sobre la oferta de belleza">
+                                        Ver más
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm offer-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop" 
+                                     class="card-img-top" 
+                                     alt="Oferta especial: 20% de descuento en libros y material educativo">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">-20%</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Libros y Material Educativo</h3>
+                                <p class="card-text">
+                                    <strong>BookLand</strong> - 20% de descuento en todos los libros y material educativo. 
+                                    Válido solo para pago en efectivo.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> Por tiempo limitado
+                                    </small>
+                                    <a href="locales-comerciales.html" class="btn btn-sm btn-primary" aria-label="Ver más sobre la oferta de libros">
+                                        Ver más
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm offer-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1536895058696-a69b1c7ba34f?w=400&h=300&fit=crop" 
+                                     class="card-img-top" 
+                                     alt="Oferta especial: 40% de descuento en juguetes">
+                                <span class="badge bg-danger position-absolute top-0 start-0 m-3 fs-6">-40%</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="h5 card-title">Juguetes</h3>
+                                <p class="card-text">
+                                    <strong>Toy Store</strong> - 40% de descuento en juguetes educativos y de entretenimiento. 
+                                    Perfecto para regalos.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> Hasta el 15/12/2024
+                                    </small>
+                                    <a href="locales-comerciales.html" class="btn btn-sm btn-primary" aria-label="Ver más sobre la oferta de juguetes">
+                                        Ver más
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ofertas gastronómicas -->
+        <section class="py-5 bg-light" aria-labelledby="titulo-gastronomia">
+            <div class="container">
+                <h2 id="titulo-gastronomia" class="text-center mb-5 h1">Ofertas Gastronómicas</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start">
+                                    <i class="bi bi-cup-hot-fill text-danger display-4 me-3" aria-hidden="true"></i>
+                                    <div>
+                                        <h3 class="h5 card-title">Combo Almuerzo</h3>
+                                        <p class="card-text">
+                                            <strong>Food Court</strong> - Almuerzo completo por solo $15. Incluye plato principal, 
+                                            bebida y postre. Válido de lunes a viernes de 12:00 a 15:00.
+                                        </p>
+                                        <span class="badge bg-success">Disponible ahora</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex align-items-start">
+                                    <i class="bi bi-cake2-fill text-warning display-4 me-3" aria-hidden="true"></i>
+                                    <div>
+                                        <h3 class="h5 card-title">Happy Hour</h3>
+                                        <p class="card-text">
+                                            <strong>Bar Central</strong> - 2x1 en bebidas y snacks de 17:00 a 19:00. 
+                                            Todos los días de la semana.
+                                        </p>
+                                        <span class="badge bg-success">Disponible ahora</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ofertas de entretenimiento -->
+        <section class="py-5" aria-labelledby="titulo-entretenimiento">
+            <div class="container">
+                <h2 id="titulo-entretenimiento" class="text-center mb-5 h1">Ofertas de Entretenimiento</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-film text-danger display-4 mb-3" aria-hidden="true"></i>
+                                <h3 class="h5 card-title">Descuento en Cine</h3>
+                                <p class="card-text">
+                                    <strong>Cine Multiplex</strong> - 20% de descuento en entradas de lunes a jueves. 
+                                    Presenta tu tarjeta de fidelización.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-joystick text-primary display-4 mb-3" aria-hidden="true"></i>
+                                <h3 class="h5 card-title">Combo Juegos</h3>
+                                <p class="card-text">
+                                    <strong>Arcade Zone</strong> - Recarga de $20 y obtén $30 en créditos de juego. 
+                                    Oferta válida todos los días.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm text-center">
+                            <div class="card-body">
+                                <i class="bi bi-gift-fill text-success display-4 mb-3" aria-hidden="true"></i>
+                                <h3 class="h5 card-title">Paquete Familiar</h3>
+                                <p class="card-text">
+                                    <strong>Zona Infantil</strong> - Acceso familiar por $25 (2 adultos + 2 niños). 
+                                    Incluye actividades y talleres.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Centro Comercial Plaza Central</h3>
+                    <p>Av. Principal 1234, Ciudad</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Email: info@plazacentral.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Horarios</h3>
+                    <p>Lunes a Viernes: 10:00 - 22:00</p>
+                    <p>Sábados y Domingos: 10:00 - 23:00</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3" aria-label="Facebook del centro comercial">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram del centro comercial">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white" aria-label="Twitter del centro comercial">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Centro Comercial Plaza Central. Todos los derechos reservados.</p>
+                <p class="mt-2 mb-0">
+                    <a href="#" class="text-white-50">Accesibilidad</a> | 
+                    <a href="#" class="text-white-50">Privacidad</a> | 
+                    <a href="#" class="text-white-50">Términos y Condiciones</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
+

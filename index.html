@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Centro Comercial Plaza Central - Tu destino para compras, entretenimiento y gastronomía">
+    <title>Centro Comercial Plaza Central - Inicio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación principal accesible con ARIA labels -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Ir al inicio - Centro Comercial Plaza Central">
+                <i class="bi bi-shop" aria-hidden="true"></i> Plaza Central
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" aria-current="page">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="entretenimientos.html">Entretenimientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="locales-comerciales.html">Locales Comerciales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ofertas.html">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gastronomia.html">Gastronomía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Sección principal de presentación -->
+    <header class="hero-section" role="banner">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center text-white">
+                    <h1 class="display-4 fw-bold mb-4">Centro Comercial Plaza Central</h1>
+                    <p class="lead mb-4">Tu destino para compras, entretenimiento y gastronomía en un solo lugar</p>
+                    <a href="#presentacion" class="btn btn-primary btn-lg" aria-label="Conocer más sobre el centro comercial">Descubre más</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de presentación general -->
+    <main id="presentacion" role="main">
+        <section class="py-5" aria-labelledby="titulo-presentacion">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <h2 id="titulo-presentacion" class="h1 mb-4">Bienvenido a Plaza Central</h2>
+                        <p class="lead">
+                            Plaza Central es el centro comercial más completo de la ciudad, ofreciendo una experiencia única 
+                            que combina las mejores tiendas, entretenimiento de primer nivel y una amplia variedad gastronómica.
+                        </p>
+                        <p>
+                            Con más de 100 locales comerciales, 12 salas de cine, un área de juegos infantiles, múltiples 
+                            opciones gastronómicas y servicios de estacionamiento, Plaza Central es el lugar ideal para 
+                            disfrutar en familia, con amigos o en solitario.
+                        </p>
+                        <p>
+                            Nuestro compromiso es brindarte no solo productos y servicios de calidad, sino una experiencia 
+                            memorable en un ambiente moderno, seguro y accesible para todos.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" 
+                             alt="Vista panorámica del interior del centro comercial Plaza Central con tiendas y pasillos amplios" 
+                             class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video de presentación con controles accesibles -->
+        <section class="py-5 bg-light" aria-labelledby="titulo-video">
+            <div class="container">
+                <h2 id="titulo-video" class="text-center mb-5">Conoce nuestro centro comercial</h2>
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                    title="Video de presentación del Centro Comercial Plaza Central" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="text-muted text-center mt-3">
+                            <small>Video promocional que muestra las instalaciones y servicios del centro comercial</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Funcionalidades del sitio -->
+        <section class="py-5" aria-labelledby="titulo-funcionalidades">
+            <div class="container">
+                <h2 id="titulo-funcionalidades" class="text-center mb-5">Funcionalidades del sitio</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-geo-alt-fill text-primary display-4 mb-3" aria-hidden="true"></i>
+                                <h3 class="h5 card-title">Mapa Interactivo</h3>
+                                <p class="card-text">Explora los locales comerciales en nuestro mapa interactivo y encuentra fácilmente lo que buscas.</p>
+                                <a href="locales-comerciales.html" class="btn btn-outline-primary" aria-label="Ir al mapa interactivo de locales comerciales">Ver mapa</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-search text-success display-4 mb-3" aria-hidden="true"></i>
+                                <h3 class="h5 card-title">Buscador de Locales</h3>
+                                <p class="card-text">Busca locales comerciales por nombre o categoría y accede directamente a su información.</p>
+                                <a href="locales-comerciales.html" class="btn btn-outline-success" aria-label="Ir al buscador de locales comerciales">Buscar locales</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-tag-fill text-danger display-4 mb-3" aria-hidden="true"></i>
+                                <h3 class="h5 card-title">Ofertas Especiales</h3>
+                                <p class="card-text">Descubre las mejores promociones y descuentos disponibles en nuestros locales.</p>
+                                <a href="ofertas.html" class="btn btn-outline-danger" aria-label="Ver ofertas y promociones especiales">Ver ofertas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card h-100 text-center border-0 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-chat-dots-fill text-info display-4 mb-3" aria-hidden="true"></i>
+                                <h3 class="h5 card-title">Asistente Virtual</h3>
+                                <p class="card-text">Recibe ayuda instantánea a través de nuestro chatbot con información y asistencia.</p>
+                                <a href="contacto.html" class="btn btn-outline-info" aria-label="Ir al chat bot de asistencia">Abrir chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accesos rápidos -->
+        <section class="py-5 bg-primary text-white" aria-labelledby="titulo-accesos">
+            <div class="container">
+                <h2 id="titulo-accesos" class="text-center mb-5">Accesos rápidos</h2>
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <a href="servicios.html" class="btn btn-light w-100" aria-label="Ir a la sección de servicios">
+                            <i class="bi bi-wrench-adjustable" aria-hidden="true"></i><br>
+                            Servicios
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="entretenimientos.html" class="btn btn-light w-100" aria-label="Ir a la sección de entretenimientos">
+                            <i class="bi bi-controller" aria-hidden="true"></i><br>
+                            Entretenimientos
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="gastronomia.html" class="btn btn-light w-100" aria-label="Ir a la sección de gastronomía">
+                            <i class="bi bi-cup-hot" aria-hidden="true"></i><br>
+                            Gastronomía
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a href="contacto.html" class="btn btn-light w-100" aria-label="Ir a la sección de contacto">
+                            <i class="bi bi-envelope" aria-hidden="true"></i><br>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer accesible -->
+    <footer class="bg-dark text-white py-4 mt-5" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Centro Comercial Plaza Central</h3>
+                    <p>Av. Principal 1234, Ciudad</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Email: info@plazacentral.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Horarios</h3>
+                    <p>Lunes a Viernes: 10:00 - 22:00</p>
+                    <p>Sábados y Domingos: 10:00 - 23:00</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3" aria-label="Facebook del centro comercial">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram del centro comercial">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white" aria-label="Twitter del centro comercial">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Centro Comercial Plaza Central. Todos los derechos reservados.</p>
+                <p class="mt-2 mb-0">
+                    <a href="#" class="text-white-50">Accesibilidad</a> | 
+                    <a href="#" class="text-white-50">Privacidad</a> | 
+                    <a href="#" class="text-white-50">Términos y Condiciones</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
+

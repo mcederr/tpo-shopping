@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframes Visuales - Centro Comercial Plaza Central</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .wireframe-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .wireframe-title {
+            background: #0d6efd;
+            color: white;
+            padding: 15px;
+            margin: -30px -30px 30px -30px;
+            border-radius: 8px 8px 0 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .wireframe-box {
+            border: 2px dashed #ccc;
+            background: #fafafa;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 4px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .wireframe-img {
+            border: 2px dashed #999;
+            background: #e9ecef;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+        .wireframe-text {
+            border: 1px dashed #ccc;
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .wireframe-button {
+            border: 2px solid #0d6efd;
+            background: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 5px;
+        }
+        .wireframe-card {
+            border: 2px dashed #ddd;
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px;
+        }
+        .wireframe-hotspot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #dc3545;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: absolute;
+            cursor: pointer;
+        }
+        .map-wrapper {
+            position: relative;
+            border: 2px dashed #999;
+            background: #e9ecef;
+            height: 400px;
+            border-radius: 4px;
+        }
+        .color-swatch {
+            width: 50px;
+            height: 50px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 5px;
+            border: 1px solid #ddd;
+        }
+        .nav-wireframe {
+            background: #212529;
+            color: white;
+            padding: 15px;
+            margin: -30px -30px 30px -30px;
+            border-radius: 8px 8px 0 0;
+        }
+        .hero-wireframe {
+            background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: -30px -30px 30px -30px;
+            border-radius: 8px 8px 0 0;
+        }
+        .footer-wireframe {
+            background: #212529;
+            color: white;
+            padding: 30px;
+            margin: 30px -30px -30px -30px;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5">Wireframes Visuales - Centro Comercial Plaza Central</h1>
+        <p class="text-center text-muted mb-5">Guía visual para diseño en FigMA - Cada sección representa una página HTML</p>
+
+        <!-- INICIO -->
+        <div class="wireframe-section">
+            <div class="wireframe-title">1. INDEX.HTML - PÁGINA DE INICIO</div>
+            
+            <div class="nav-wireframe mb-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div><strong>🛍️ Plaza Central</strong></div>
+                    <div>Inicio | Servicios | Entretenimientos | Locales | Ofertas | Gastronomía | Contacto</div>
+                </div>
+            </div>
+
+            <div class="hero-wireframe">
+                <h2 class="mb-3">Centro Comercial Plaza Central</h2>
+                <p class="mb-3">Tu destino para compras, entretenimiento y gastronomía</p>
+                <div class="wireframe-button">Descubre más</div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-box">
+                        <div>
+                            <strong>Título H1</strong><br>
+                            Texto descriptivo sobre el centro comercial. 
+                            Información general, misión, valores.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-img">Imagen 800x600px</div>
+                </div>
+            </div>
+
+            <div class="wireframe-box mt-4" style="background: #f8f9fa;">
+                <div class="w-100">
+                    <strong>Video de Presentación</strong><br>
+                    <div class="wireframe-img mt-2" style="height: 300px;">Video 16:9 Ratio</div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="wireframe-card">
+                        <div style="font-size: 2rem; text-align: center;">📍</div>
+                        <strong>Mapa Interactivo</strong>
+                        <p class="small">Descripción funcionalidad</p>
+                        <div class="wireframe-button">Ver mapa</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wireframe-card">
+                        <div style="font-size: 2rem; text-align: center;">🔍</div>
+                        <strong>Buscador</strong>
+                        <p class="small">Descripción funcionalidad</p>
+                        <div class="wireframe-button">Buscar</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wireframe-card">
+                        <div style="font-size: 2rem; text-align: center;">🏷️</div>
+                        <strong>Ofertas</strong>
+                        <p class="small">Descripción funcionalidad</p>
+                        <div class="wireframe-button">Ver ofertas</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wireframe-card">
+                        <div style="font-size: 2rem; text-align: center;">💬</div>
+                        <strong>Chat Bot</strong>
+                        <p class="small">Descripción funcionalidad</p>
+                        <div class="wireframe-button">Abrir chat</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-wireframe mt-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Centro Comercial Plaza Central</strong><br>
+                        Dirección | Teléfono | Email
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Horarios</strong><br>
+                        Lunes a Viernes: 10:00 - 22:00
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICIOS -->
+        <div class="wireframe-section">
+            <div class="wireframe-title" style="background: #0d6efd;">2. SERVICIOS.HTML</div>
+            
+            <div class="hero-wireframe" style="background: #0d6efd;">
+                <h2>Servicios</h2>
+                <p>Todo lo que necesitas para disfrutar de tu visita</p>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-box">
+                        <div>
+                            <strong>Estacionamiento</strong><br>
+                            ✓ 2,500 espacios<br>
+                            ✓ Gratis 2 horas<br>
+                            ✓ Accesible<br>
+                            ✓ Vigilancia 24/7
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-img">Imagen Estacionamiento</div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="wireframe-card text-center">
+                        <div style="font-size: 3rem;">📅</div>
+                        <strong>Eventos Especiales</strong>
+                        <p class="small">Descripción</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card text-center">
+                        <div style="font-size: 3rem;">👥</div>
+                        <strong>Talleres</strong>
+                        <p class="small">Descripción</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card text-center">
+                        <div style="font-size: 3rem;">🎁</div>
+                        <strong>Promociones</strong>
+                        <p class="small">Descripción</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div style="font-size: 2rem; margin-right: 15px;">⭐</div>
+                        <div>
+                            <strong>Programa de Puntos</strong>
+                            <p class="small">Descripción del programa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex">
+                        <div style="font-size: 2rem; margin-right: 15px;">💳</div>
+                        <div>
+                            <strong>Tarjeta VIP</strong>
+                            <p class="small">Descripción tarjeta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <div class="wireframe-card text-center">
+                        <div style="font-size: 2rem;">🛡️</div>
+                        <strong>Seguridad</strong>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wireframe-card text-center">
+                        <div style="font-size: 2rem;">♿</div>
+                        <strong>Accesibilidad</strong>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wireframe-card text-center">
+                        <div style="font-size: 2rem;">📶</div>
+                        <strong>Wi-Fi</strong>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wireframe-card text-center">
+                        <div style="font-size: 2rem;">ℹ️</div>
+                        <strong>Información</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENTRETENIMIENTOS -->
+        <div class="wireframe-section">
+            <div class="wireframe-title" style="background: #198754;">3. ENTRETENIMIENTOS.HTML</div>
+            
+            <div class="hero-wireframe" style="background: #198754;">
+                <h2>Entretenimientos</h2>
+                <p>Espacios recreativos y culturales para toda la familia</p>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-box">
+                        <strong>🎬 Cine Multiplex</strong><br>
+                        12 salas, tecnología 4D, sonido Dolby Atmos
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-img">Imagen Cine</div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-img">Imagen Juegos</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-box">
+                        <strong>🎮 Zona de Juegos</strong><br>
+                        Arcade, realidad virtual, simuladores
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-box">
+                        <strong>🎈 Zona Infantil</strong><br>
+                        Área segura para niños con actividades
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-img">Imagen Zona Infantil</div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <div class="wireframe-img" style="height: 150px;">Imagen</div>
+                        <strong>🎨 Galería de Arte</strong>
+                        <p class="small">Descripción</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <div class="wireframe-img" style="height: 150px;">Imagen</div>
+                        <strong>🎤 Anfiteatro</strong>
+                        <p class="small">Descripción</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <div class="wireframe-img" style="height: 150px;">Imagen</div>
+                        <strong>📚 Biblioteca</strong>
+                        <p class="small">Descripción</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOCALES COMERCIALES -->
+        <div class="wireframe-section">
+            <div class="wireframe-title" style="background: #0dcaf0;">4. LOCALES-COMERCIALES.HTML</div>
+            
+            <div class="hero-wireframe" style="background: #0dcaf0;">
+                <h2>Locales Comerciales</h2>
+                <p>Encuentra tu tienda favorita en nuestro mapa interactivo</p>
+            </div>
+
+            <div class="wireframe-box mt-4">
+                <div class="w-100">
+                    <strong>🔍 Buscador</strong><br>
+                    <div class="input-group mt-2">
+                        <input type="text" class="form-control" placeholder="Buscar local por nombre...">
+                        <button class="btn btn-primary">Buscar</button>
+                    </div>
+                    <div class="mt-2 small text-muted">Resultados de búsqueda aparecen aquí</div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <strong class="d-block mb-2">Mapa Interactivo</strong>
+                <div class="map-wrapper">
+                    <div style="padding: 20px; color: #999;">
+                        Imagen del Mapa del Centro Comercial
+                    </div>
+                    <!-- Hotspots simulados -->
+                    <div class="wireframe-hotspot" style="top: 20%; left: 15%;">1</div>
+                    <div class="wireframe-hotspot" style="top: 25%; left: 45%;">2</div>
+                    <div class="wireframe-hotspot" style="top: 50%; left: 30%;">3</div>
+                    <div class="wireframe-hotspot" style="top: 60%; left: 60%;">4</div>
+                    <div class="wireframe-hotspot" style="top: 35%; left: 75%;">5</div>
+                    <div class="wireframe-hotspot" style="top: 70%; left: 20%;">6</div>
+                </div>
+                <p class="small text-muted mt-2">Haz clic en los puntos marcados para ver información del local</p>
+            </div>
+
+            <div class="mt-4">
+                <strong class="d-block mb-3">Modal de Información del Local</strong>
+                <div class="wireframe-box" style="max-width: 500px; margin: 0 auto;">
+                    <div class="d-flex justify-content-between mb-3">
+                        <strong>Información del Local</strong>
+                        <span>[X]</span>
+                    </div>
+                    <div class="wireframe-text">
+                        <strong>Fashion Style</strong><br>
+                        Ropa y Moda<br>
+                        Descripción del local...
+                    </div>
+                    <div class="wireframe-text mt-2">
+                        📍 Local 101 - Planta Baja<br>
+                        📞 (123) 111-1111<br>
+                        🕐 10:00 - 22:00
+                    </div>
+                    <div class="mt-3">
+                        <button class="wireframe-button">Cerrar</button>
+                        <button class="wireframe-button">Visitar sitio</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <strong>🏪 Local 1</strong>
+                        <p class="small">Descripción breve</p>
+                        <button class="wireframe-button">Visitar</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <strong>🏪 Local 2</strong>
+                        <p class="small">Descripción breve</p>
+                        <button class="wireframe-button">Visitar</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <strong>🏪 Local 3</strong>
+                        <p class="small">Descripción breve</p>
+                        <button class="wireframe-button">Visitar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFERTAS -->
+        <div class="wireframe-section">
+            <div class="wireframe-title" style="background: #dc3545;">5. OFERTAS.HTML</div>
+            
+            <div class="hero-wireframe" style="background: #dc3545;">
+                <h2>Ofertas Especiales</h2>
+                <p>Las mejores promociones y descuentos disponibles</p>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="wireframe-card position-relative">
+                        <div style="position: absolute; top: 10px; left: 10px; background: #dc3545; color: white; padding: 5px 10px; border-radius: 4px;">
+                            -50%
+                        </div>
+                        <div class="wireframe-img" style="height: 150px;">Imagen Oferta</div>
+                        <strong class="d-block mt-2">Ropa de Verano</strong>
+                        <p class="small">Fashion Style - Descripción</p>
+                        <div class="d-flex justify-content-between mt-2">
+                            <small>Hasta 30/12</small>
+                            <button class="wireframe-button">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card position-relative">
+                        <div style="position: absolute; top: 10px; left: 10px; background: #dc3545; color: white; padding: 5px 10px; border-radius: 4px;">
+                            -30%
+                        </div>
+                        <div class="wireframe-img" style="height: 150px;">Imagen Oferta</div>
+                        <strong class="d-block mt-2">Electrónica</strong>
+                        <p class="small">TechWorld - Descripción</p>
+                        <div class="d-flex justify-content-between mt-2">
+                            <small>Stock limitado</small>
+                            <button class="wireframe-button">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card position-relative">
+                        <div style="position: absolute; top: 10px; left: 10px; background: #dc3545; color: white; padding: 5px 10px; border-radius: 4px;">
+                            2x1
+                        </div>
+                        <div class="wireframe-img" style="height: 150px;">Imagen Oferta</div>
+                        <strong class="d-block mt-2">Deportes</strong>
+                        <p class="small">SportZone - Descripción</p>
+                        <div class="d-flex justify-content-between mt-2">
+                            <small>Esta semana</small>
+                            <button class="wireframe-button">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-card">
+                        <div class="d-flex">
+                            <div style="font-size: 3rem; margin-right: 15px;">🍽️</div>
+                            <div>
+                                <strong>Combo Almuerzo</strong>
+                                <p class="small">Food Court - $15</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-card">
+                        <div class="d-flex">
+                            <div style="font-size: 3rem; margin-right: 15px;">🍺</div>
+                            <div>
+                                <strong>Happy Hour</strong>
+                                <p class="small">Bar Central - 2x1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GASTRONOMIA -->
+        <div class="wireframe-section">
+            <div class="wireframe-title" style="background: #ffc107; color: #212529;">6. GASTRONOMIA.HTML</div>
+            
+            <div class="hero-wireframe" style="background: #ffc107; color: #212529;">
+                <h2>Gastronomía</h2>
+                <p>Sabores para todos los gustos en un solo lugar</p>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-box">
+                        <strong>🍽️ Food Court</strong><br>
+                        20+ opciones gastronómicas
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-img">Imagen Food Court</div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <div class="wireframe-img" style="height: 150px;">Imagen</div>
+                        <strong>🍝 Bella Italia</strong>
+                        <p class="small">Cocina italiana</p>
+                        <small>💰💰💰 | 🕐 12:00-23:00</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <div class="wireframe-img" style="height: 150px;">Imagen</div>
+                        <strong>🍣 Sushi Master</strong>
+                        <p class="small">Comida japonesa</p>
+                        <small>💰💰💰 | 🕐 11:30-22:30</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wireframe-card">
+                        <div class="wireframe-img" style="height: 150px;">Imagen</div>
+                        <strong>🔥 La Parrilla</strong>
+                        <p class="small">Carnes a la parrilla</p>
+                        <small>💰💰 | 🕐 12:00-00:00</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="wireframe-card">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <div class="wireframe-img" style="height: 120px;">Img</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="p-3">
+                                    <strong>☕ Coffee Corner</strong>
+                                    <p class="small">Café de especialidad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="wireframe-card">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <div class="wireframe-img" style="height: 120px;">Img</div>
+                            </div>
+                            <div class="col-8">
+                                <div class="p-3">
+                                    <strong>🍦 Gelato Paradise</strong>
+                                    <p class="small">Helados artesanales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="wireframe-section">
+            <div class="wireframe-title" style="background: #212529;">7. CONTACTO.HTML</div>
+            
+            <div class="hero-wireframe" style="background: #212529;">
+                <h2>Contacto</h2>
+                <p>Estamos aquí para ayudarte</p>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4 text-center">
+                    <div style="font-size: 3rem;">📍</div>
+                    <strong>Dirección</strong>
+                    <p class="small">Av. Principal 1234</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div style="font-size: 3rem;">📞</div>
+                    <strong>Teléfono</strong>
+                    <p class="small">(123) 456-7890</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div style="font-size: 3rem;">✉️</div>
+                    <strong>Email</strong>
+                    <p class="small">info@plazacentral.com</p>
+                </div>
+            </div>
+
+            <div class="wireframe-box mt-4">
+                <strong>Formulario de Contacto</strong>
+                <div class="mt-3">
+                    <div class="wireframe-text">Nombre: [___________] *</div>
+                    <div class="wireframe-text">Email: [___________] *</div>
+                    <div class="wireframe-text">Teléfono: [___________]</div>
+                    <div class="wireframe-text">Asunto: [Dropdown ▼] *</div>
+                    <div class="wireframe-text" style="min-height: 100px;">Mensaje: [___________] *</div>
+                    <div class="wireframe-text">☑ Acepto términos *</div>
+                    <button class="wireframe-button mt-3">Enviar Mensaje</button>
+                </div>
+            </div>
+
+            <div class="wireframe-box mt-4">
+                <div class="d-flex justify-content-between mb-2" style="background: #0d6efd; color: white; padding: 10px; border-radius: 4px;">
+                    <strong>🤖 Chat Bot Plaza Central</strong>
+                    <span>[−]</span>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; min-height: 300px; border: 1px dashed #ccc;">
+                    <div class="mb-3" style="text-align: left;">
+                        <div style="background: #0dcaf0; color: white; padding: 10px; border-radius: 8px; display: inline-block;">
+                            <strong>Bot:</strong> ¡Hola! ¿En qué puedo ayudarte?
+                        </div>
+                    </div>
+                    <div class="mb-3" style="text-align: right;">
+                        <div style="background: #0d6efd; color: white; padding: 10px; border-radius: 8px; display: inline-block;">
+                            <strong>Tú:</strong> ¿Cuáles son los horarios?
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Escribe tu pregunta...">
+                        <button class="btn btn-primary">Enviar</button>
+                    </div>
+                    <div class="mt-2">
+                        <button class="btn btn-outline-primary btn-sm">Horarios</button>
+                        <button class="btn btn-outline-primary btn-sm">Estacionamiento</button>
+                        <button class="btn btn-outline-primary btn-sm">Ofertas</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <strong class="d-block mb-2">Mapa de Ubicación</strong>
+                <div class="wireframe-img" style="height: 300px;">Google Maps Embed 16:9</div>
+            </div>
+        </div>
+
+        <!-- PALETA DE COLORES -->
+        <div class="wireframe-section">
+            <div class="wireframe-title">PALETA DE COLORES Y ESPECIFICACIONES</div>
+            
+            <div class="mt-4">
+                <h4>Colores Principales</h4>
+                <div>
+                    <span class="color-swatch" style="background: #0d6efd;" title="Primary"></span>
+                    <span class="color-swatch" style="background: #198754;" title="Success"></span>
+                    <span class="color-swatch" style="background: #dc3545;" title="Danger"></span>
+                    <span class="color-swatch" style="background: #ffc107;" title="Warning"></span>
+                    <span class="color-swatch" style="background: #0dcaf0;" title="Info"></span>
+                    <span class="color-swatch" style="background: #212529;" title="Dark"></span>
+                    <span class="color-swatch" style="background: #6c757d;" title="Secondary"></span>
+                    <span class="color-swatch" style="background: #f8f9fa;" title="Light"></span>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h4>Tipografía</h4>
+                <div class="wireframe-text">
+                    <h1>H1 - Display 4 (48px)</h1>
+                    <h2>H2 - Display 5 (36px)</h2>
+                    <h3>H3 - H5 (24px)</h3>
+                    <p>Body - Base (16px) - Line height 1.6</p>
+                    <small>Small - 14px</small>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h4>Espaciado</h4>
+                <div class="wireframe-text">
+                    xs: 4px | sm: 8px | md: 16px | lg: 24px | xl: 32px | xxl: 48px | xxxl: 64px
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h4>Border Radius</h4>
+                <div class="wireframe-text">
+                    Small: 4px | Medium: 8px | Large: 12px | Circle: 50%
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

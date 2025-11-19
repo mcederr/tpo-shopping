@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Espacios gastronómicos del Centro Comercial Plaza Central con descripción e imágenes">
+    <title>Gastronomía - Centro Comercial Plaza Central</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" aria-label="Ir al inicio - Centro Comercial Plaza Central">
+                <i class="bi bi-shop" aria-hidden="true"></i> Plaza Central
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="entretenimientos.html">Entretenimientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="locales-comerciales.html">Locales Comerciales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ofertas.html">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gastronomia.html" aria-current="page">Gastronomía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de página -->
+    <header class="page-header bg-warning text-dark py-5 mt-5" role="banner">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Gastronomía</h1>
+            <p class="lead">Sabores para todos los gustos en un solo lugar</p>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main role="main">
+        <!-- Food Court -->
+        <section class="py-5" aria-labelledby="titulo-foodcourt">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <h2 id="titulo-foodcourt" class="h1 mb-4">
+                            <i class="bi bi-shop-window text-warning" aria-hidden="true"></i> Food Court
+                        </h2>
+                        <p class="lead">Variedad y sabor en un solo lugar</p>
+                        <p>
+                            Nuestro food court ofrece más de 20 opciones gastronómicas para satisfacer todos los 
+                            gustos y presupuestos. Desde comida rápida hasta platos gourmet, pasando por cocina 
+                            internacional y local.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+                                <strong>20+ opciones</strong> gastronómicas diferentes
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+                                <strong>Área común</strong> amplia y cómoda con capacidad para 500 personas
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+                                <strong>Wi-Fi gratuito</strong> en toda el área
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+                                <strong>Opciones vegetarianas</strong> y veganas disponibles
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop" 
+                             alt="Food Court amplio con múltiples puestos de comida y mesas para clientes" 
+                             class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurantes -->
+        <section class="py-5 bg-light" aria-labelledby="titulo-restaurantes">
+            <div class="container">
+                <h2 id="titulo-restaurantes" class="text-center mb-5 h1">Restaurantes</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Restaurante italiano con ambiente acogedor y platos de pasta">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">
+                                    <i class="bi bi-egg-fried text-primary" aria-hidden="true"></i> Bella Italia
+                                </h3>
+                                <p class="card-text">
+                                    Auténtica cocina italiana con pastas frescas, pizzas al horno de leña y 
+                                    platos tradicionales. Ambiente familiar y acogedor.
+                                </p>
+                                <p class="mb-0">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> 12:00 - 23:00 | 
+                                        <i class="bi bi-currency-dollar" aria-hidden="true"></i> $$$ 
+                                        <span class="visually-hidden">Precio medio-alto</span>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=300&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Restaurante de sushi con barra de sushi fresca y ambiente moderno">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">
+                                    <i class="bi bi-fish text-info" aria-hidden="true"></i> Sushi Master
+                                </h3>
+                                <p class="card-text">
+                                    Sushi y comida japonesa de alta calidad. Barra de sushi fresca, ramen 
+                                    tradicional y opciones para llevar. Ambiente moderno y elegante.
+                                </p>
+                                <p class="mb-0">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> 11:30 - 22:30 | 
+                                        <i class="bi bi-currency-dollar" aria-hidden="true"></i> $$$ 
+                                        <span class="visually-hidden">Precio medio-alto</span>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=400&h=300&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Restaurante de parrilla con carnes a la brasa y ambiente rústico">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">
+                                    <i class="bi bi-fire text-danger" aria-hidden="true"></i> La Parrilla
+                                </h3>
+                                <p class="card-text">
+                                    Especialistas en carnes a la parrilla, asados y platos locales. Ambiente 
+                                    rústico y familiar. Perfecto para compartir en grupo.
+                                </p>
+                                <p class="mb-0">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> 12:00 - 00:00 | 
+                                        <i class="bi bi-currency-dollar" aria-hidden="true"></i> $$ 
+                                        <span class="visually-hidden">Precio medio</span>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Restaurante vegetariano con platos saludables y frescos">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">
+                                    <i class="bi bi-flower1 text-success" aria-hidden="true"></i> Verde Vida
+                                </h3>
+                                <p class="card-text">
+                                    Restaurante vegetariano y vegano con opciones saludables y deliciosas. 
+                                    Menú variado con productos frescos y orgánicos.
+                                </p>
+                                <p class="mb-0">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> 11:00 - 21:00 | 
+                                        <i class="bi bi-currency-dollar" aria-hidden="true"></i> $$ 
+                                        <span class="visually-hidden">Precio medio</span>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Pizzería con pizzas artesanales y ambiente casual">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">
+                                    <i class="bi bi-circle-fill text-warning" aria-hidden="true"></i> Pizza Express
+                                </h3>
+                                <p class="card-text">
+                                    Pizzas artesanales con ingredientes frescos. Variedad de sabores, 
+                                    opciones para llevar y servicio rápido. Ambiente casual y juvenil.
+                                </p>
+                                <p class="mb-0">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> 11:00 - 23:00 | 
+                                        <i class="bi bi-currency-dollar" aria-hidden="true"></i> $ 
+                                        <span class="visually-hidden">Precio económico</span>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=400&h=300&fit=crop" 
+                                 class="card-img-top" 
+                                 alt="Restaurante de comida mexicana con tacos y ambiente festivo">
+                            <div class="card-body">
+                                <h3 class="h5 card-title">
+                                    <i class="bi bi-pepper-hot text-danger" aria-hidden="true"></i> Tacos & Más
+                                </h3>
+                                <p class="card-text">
+                                    Auténtica comida mexicana: tacos, burritos, quesadillas y más. Salsas 
+                                    caseras y ambiente festivo. Ideal para comida rápida y sabrosa.
+                                </p>
+                                <p class="mb-0">
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock" aria-hidden="true"></i> 11:00 - 22:00 | 
+                                        <i class="bi bi-currency-dollar" aria-hidden="true"></i> $ 
+                                        <span class="visually-hidden">Precio económico</span>
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cafeterías y Bebidas -->
+        <section class="py-5" aria-labelledby="titulo-cafeterias">
+            <div class="container">
+                <h2 id="titulo-cafeterias" class="text-center mb-5 h1">Cafeterías y Bebidas</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&h=200&fit=crop" 
+                                         class="img-fluid rounded-start h-100 object-cover" 
+                                         alt="Cafetería con café artesanal y ambiente acogedor">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">
+                                            <i class="bi bi-cup-hot text-warning" aria-hidden="true"></i> Coffee Corner
+                                        </h3>
+                                        <p class="card-text">
+                                            Café de especialidad, pastelería artesanal y ambiente tranquilo 
+                                            para trabajar o relajarse. Wi-Fi incluido.
+                                        </p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock" aria-hidden="true"></i> 7:00 - 22:00
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=300&h=200&fit=crop" 
+                                         class="img-fluid rounded-start h-100 object-cover" 
+                                         alt="Heladería con variedad de helados y postres">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">
+                                            <i class="bi bi-snow text-info" aria-hidden="true"></i> Gelato Paradise
+                                        </h3>
+                                        <p class="card-text">
+                                            Helados artesanales, granizados, batidos y postres italianos. 
+                                            Más de 30 sabores diferentes disponibles.
+                                        </p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock" aria-hidden="true"></i> 10:00 - 23:00
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=300&h=200&fit=crop" 
+                                         class="img-fluid rounded-start h-100 object-cover" 
+                                         alt="Bar con cócteles y ambiente nocturno">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">
+                                            <i class="bi bi-cup-straw text-primary" aria-hidden="true"></i> Bar Central
+                                        </h3>
+                                        <p class="card-text">
+                                            Bar con amplia selección de cócteles, cervezas artesanales y 
+                                            snacks. Happy hour todas las tardes. Ambiente nocturno vibrante.
+                                        </p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock" aria-hidden="true"></i> 17:00 - 02:00
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=300&h=200&fit=crop" 
+                                         class="img-fluid rounded-start h-100 object-cover" 
+                                         alt="Juguería con jugos naturales y batidos saludables">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h3 class="h5 card-title">
+                                            <i class="bi bi-droplet text-success" aria-hidden="true"></i> Jugos Naturales
+                                        </h3>
+                                        <p class="card-text">
+                                            Jugos recién exprimidos, batidos saludables, smoothies y opciones 
+                                            detox. Productos frescos y naturales todos los días.
+                                        </p>
+                                        <small class="text-muted">
+                                            <i class="bi bi-clock" aria-hidden="true"></i> 9:00 - 21:00
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Centro Comercial Plaza Central</h3>
+                    <p>Av. Principal 1234, Ciudad</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                    <p>Email: info@plazacentral.com</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h5 mb-3">Horarios</h3>
+                    <p>Lunes a Viernes: 10:00 - 22:00</p>
+                    <p>Sábados y Domingos: 10:00 - 23:00</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3" aria-label="Facebook del centro comercial">
+                            <i class="bi bi-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram del centro comercial">
+                            <i class="bi bi-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="text-white" aria-label="Twitter del centro comercial">
+                            <i class="bi bi-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Centro Comercial Plaza Central. Todos los derechos reservados.</p>
+                <p class="mt-2 mb-0">
+                    <a href="#" class="text-white-50">Accesibilidad</a> | 
+                    <a href="#" class="text-white-50">Privacidad</a> | 
+                    <a href="#" class="text-white-50">Términos y Condiciones</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
+
