@@ -116,9 +116,13 @@ a:hover, a:focus {
 }
 
 /* Mejora en la legibilidad del texto del hero */
-.hero-section h1,
+.hero-section h1 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra oscura para mejor contraste */
+}
+
 .hero-section p {
-    text-shadow: 2px 2px 4px rgb(255, 255, 255); /* Mejora contraste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra oscura para mejor contraste */
 }
 
 /* ============================================
@@ -301,10 +305,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mensajes de error accesibles */
 .invalid-feedback {
-    display: block;
+    display: none; /* Oculto por defecto */
     color: var(--danger-color);
     font-size: 0.875rem;
     margin-top: 0.25rem;
+}
+
+/* Mostrar mensaje de error solo cuando el campo tiene la clase is-invalid */
+.form-control.is-invalid ~ .invalid-feedback,
+.form-select.is-invalid ~ .invalid-feedback,
+.form-check-input.is-invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.was-validated .form-select:invalid ~ .invalid-feedback,
+.was-validated .form-check-input:invalid ~ .invalid-feedback {
+    display: block;
 }
 
 .valid-feedback {

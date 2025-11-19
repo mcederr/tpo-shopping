@@ -234,12 +234,12 @@ function inicializarBuscador() {
 
         searchResults.innerHTML = html;
 
-        // Agregar eventos a los resultados para resaltar en el mapa
+        // Agregar eventos a los resultados para resaltar en el mapa (sin abrir modal)
         const resultItems = searchResults.querySelectorAll('.search-result-item');
         resultItems.forEach(item => {
             item.addEventListener('click', function() {
                 const localId = parseInt(this.getAttribute('data-local-id'));
-                resaltarHotspotEnMapa(localId);
+                resaltarHotspotEnMapa(localId, false); // false = no abrir modal
             });
 
             // Soporte para teclado
@@ -251,9 +251,9 @@ function inicializarBuscador() {
             });
         });
 
-        // Resaltar el primer resultado en el mapa automáticamente
+        // Resaltar el primer resultado en el mapa automáticamente (sin abrir modal)
         if (resultados.length > 0) {
-            resaltarHotspotEnMapa(resultados[0].id);
+            resaltarHotspotEnMapa(resultados[0].id, false); // false = no abrir modal
         }
     }
 
@@ -264,7 +264,8 @@ function inicializarBuscador() {
     }
 
     // Función para resaltar hotspot en el mapa
-    function resaltarHotspotEnMapa(localId) {
+    // abrirModal: true si debe abrir el modal (click directo en mapa), false si solo resalta
+    function resaltarHotspotEnMapa(localId, abrirModal = true) {
         // Remover active de todos los hotspots
         document.querySelectorAll('.hotspot').forEach(h => {
             h.classList.remove('active');
@@ -276,10 +277,13 @@ function inicializarBuscador() {
             hotspot.classList.add('active');
             // Scroll suave hacia el mapa
             hotspot.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // Trigger click para mostrar modal
-            setTimeout(() => {
-                hotspot.click();
-            }, 300);
+            
+            // Solo abrir modal si se especifica (click directo en el mapa)
+            if (abrirModal) {
+                setTimeout(() => {
+                    hotspot.click();
+                }, 300);
+            }
         }
     }
 
@@ -465,6 +469,7 @@ function inicializarChatBot() {
 /**
  * Inicializa la validación del formulario de contacto
  * Valida campos requeridos y formato de email
+ * Los errores solo se muestran cuando se pierde el foco (blur), no desde el inicio
  */
 function inicializarValidacionFormulario() {
     const form = document.getElementById('contact-form');
@@ -472,21 +477,44 @@ function inicializarValidacionFormulario() {
 
     if (!form) return;
 
-    // Validación en tiempo real
+    // Asegurar que el formulario no tenga la clase was-validated desde el inicio
+    form.classList.remove('was-validated');
+
+    // Obtener todos los campos requeridos
     const campos = form.querySelectorAll('input[required], select[required], textarea[required]');
+    
+    // Ocultar todos los mensajes de error inicialmente
+    const mensajesError = form.querySelectorAll('.invalid-feedback');
+    mensajesError.forEach(mensaje => {
+        mensaje.style.display = 'none';
+    });
+    
+    // Limpiar cualquier estado de validación inicial y marcar que el campo no ha sido tocado
     campos.forEach(campo => {
+        campo.classList.remove('is-invalid', 'is-valid');
+        campo.setAttribute('data-touched', 'false'); // Marcar que no ha sido tocado
+        
+        // Validar solo cuando se pierde el foco (blur), no desde el inicio
         campo.addEventListener('blur', function() {
+            this.setAttribute('data-touched', 'true'); // Marcar como tocado
             validarCampo(this);
         });
 
+        // Limpiar estado de validación mientras el usuario escribe (solo si ya estaba invalidado)
         campo.addEventListener('input', function() {
             if (this.classList.contains('is-invalid')) {
-                validarCampo(this);
+                // Si empieza a escribir en un campo inválido, limpiar el error
+                this.classList.remove('is-invalid');
+                // Ocultar el mensaje de error
+                const feedback = this.parentElement.querySelector('.invalid-feedback');
+                if (feedback) {
+                    feedback.style.display = 'none';
+                }
             }
         });
     });
 
-    // Validación del email
+    // Validación del email (solo al perder foco)
     const emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('blur', function() {
@@ -495,22 +523,45 @@ function inicializarValidacionFormulario() {
                 this.setCustomValidity('Por favor ingresa un email válido');
                 this.classList.add('is-invalid');
                 this.classList.remove('is-valid');
-            } else if (this.value) {
+            } else if (this.value && emailRegex.test(this.value)) {
                 this.setCustomValidity('');
                 this.classList.remove('is-invalid');
                 this.classList.add('is-valid');
+            } else {
+                // Si está vacío, usar la validación estándar
+                validarCampo(this);
             }
         });
     }
 
     // Función para validar un campo individual
     function validarCampo(campo) {
+        const fueTocado = campo.getAttribute('data-touched') === 'true';
+        const feedback = campo.parentElement.querySelector('.invalid-feedback');
+        
         if (campo.checkValidity()) {
             campo.classList.remove('is-invalid');
             campo.classList.add('is-valid');
+            // Ocultar mensaje de error si existe
+            if (feedback) {
+                feedback.style.display = 'none';
+            }
         } else {
-            campo.classList.remove('is-valid');
-            campo.classList.add('is-invalid');
+            // Solo mostrar error si el campo ha sido tocado
+            if (fueTocado) {
+                campo.classList.remove('is-valid');
+                campo.classList.add('is-invalid');
+                // Mostrar mensaje de error
+                if (feedback) {
+                    feedback.style.display = 'block';
+                }
+            } else {
+                // Si no ha sido tocado, no mostrar error visual
+                campo.classList.remove('is-invalid', 'is-valid');
+                if (feedback) {
+                    feedback.style.display = 'none';
+                }
+            }
         }
     }
 
@@ -532,7 +583,19 @@ function inicializarValidacionFormulario() {
         const aceptoCheckbox = document.getElementById('acepto');
         if (aceptoCheckbox && !aceptoCheckbox.checked) {
             aceptoCheckbox.classList.add('is-invalid');
+            aceptoCheckbox.setAttribute('data-touched', 'true');
+            // Mostrar mensaje de error del checkbox
+            const feedbackCheckbox = aceptoCheckbox.parentElement.querySelector('.invalid-feedback');
+            if (feedbackCheckbox) {
+                feedbackCheckbox.style.display = 'block';
+            }
             esValido = false;
+        } else if (aceptoCheckbox) {
+            aceptoCheckbox.classList.remove('is-invalid');
+            const feedbackCheckbox = aceptoCheckbox.parentElement.querySelector('.invalid-feedback');
+            if (feedbackCheckbox) {
+                feedbackCheckbox.style.display = 'none';
+            }
         }
 
         if (esValido) {
