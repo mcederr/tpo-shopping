@@ -10,69 +10,58 @@
 const locales = [
     {
         id: 1,
-        nombre: "Fashion Style",
-        categoria: "Ropa y Moda",
-        descripcion: "Tienda de ropa y accesorios de moda para toda la familia. Marcas reconocidas y las últimas tendencias.",
+        nombre: "Compu Garden",
+        categoria: "Hardware y Tecnología",
+        descripcion: "Tu tienda de confianza para componentes de PC: piezas originales, asesoramiento técnico y envíos a todo el país. Ofrecemos garantías, soporte para armado y recomendaciones según tu presupuesto.",
         piso: "Planta Baja",
         ubicacion: "Local 101",
         telefono: "(123) 111-1111",
         horario: "10:00 - 22:00",
-        enlace: "#" // Reemplazar con URL real del local
+        enlace: "https://facundorospide.github.io/local-comercial-compu-garden---2da-entrega/index.html"
     },
     {
         id: 2,
-        nombre: "TechWorld",
-        categoria: "Electrónica",
-        descripcion: "Todo en tecnología: smartphones, tablets, laptops, accesorios y gadgets. Especialistas en marcas premium.",
+        nombre: "HeroMarket",
+        categoria: "Comics y Coleccionables",
+        descripcion: "Tu universo de comics, tazas y coleccionables de Marvel y DC. ¡Descubre productos únicos para verdaderos fans!",
         piso: "Planta Baja",
         ubicacion: "Local 205",
         telefono: "(123) 222-2222",
         horario: "10:00 - 22:00",
-        enlace: "#" // Reemplazar con URL real del local
+        enlace: "https://mcederr.github.io/heromarket/"
     },
     {
         id: 3,
-        nombre: "SportZone",
-        categoria: "Deportes",
-        descripcion: "Equipamiento deportivo y ropa de entrenamiento. Calzado deportivo de las mejores marcas.",
+        nombre: "Dimmens",
+        categoria: "Hogar y Descanso",
+        descripcion: "Colchones, sommiers, almohadas y accesorios para el descanso. Encontramos el colchón ideal para vos según tus necesidades y presupuesto.",
         piso: "Primer Piso",
         ubicacion: "Local 301",
         telefono: "(123) 333-3333",
         horario: "10:00 - 22:00",
-        enlace: "#" // Reemplazar con URL real del local
+        enlace: "https://facunacca.github.io/TPO-Local-Comercial-Dimmens/"
     },
     {
         id: 4,
-        nombre: "Beauty Plus",
-        categoria: "Cosméticos",
-        descripcion: "Perfumería y cosméticos de marcas internacionales. Productos de belleza y cuidado personal.",
+        nombre: "Brew Haven",
+        categoria: "Gastronomía",
+        descripcion: "Cafetería con aromas que inspiran y sabores que enamoran. Experiencia de café única con ambiente acogedor.",
         piso: "Primer Piso",
         ubicacion: "Local 412",
         telefono: "(123) 444-4444",
         horario: "10:00 - 22:00",
-        enlace: "#" // Reemplazar con URL real del local
+        enlace: "https://valenurcullu.github.io/CafeteriaBrewHaven/index.html"
     },
     {
         id: 5,
-        nombre: "BookLand",
-        categoria: "Libros",
-        descripcion: "Librería con amplia variedad de libros, material educativo, revistas y artículos de papelería.",
+        nombre: "CelWell",
+        categoria: "Salud y Bienestar",
+        descripcion: "Salud a un click de distancia. Venta de vitaminas y suplementos para tu bienestar. Productos destacados para el cuidado de tu salud.",
         piso: "Segundo Piso",
         ubicacion: "Local 501",
         telefono: "(123) 555-5555",
         horario: "10:00 - 22:00",
-        enlace: "#" // Reemplazar con URL real del local
-    },
-    {
-        id: 6,
-        nombre: "Toy Store",
-        categoria: "Juguetes",
-        descripcion: "Juguetería con juguetes educativos, juegos de mesa, muñecas, figuras de acción y más.",
-        piso: "Segundo Piso",
-        ubicacion: "Local 608",
-        telefono: "(123) 666-6666",
-        horario: "10:00 - 22:00",
-        enlace: "#" // Reemplazar con URL real del local
+        enlace: "https://maxmart27.github.io/CelWell---Figma/index.html"
     }
 ];
 
