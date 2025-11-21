@@ -17,7 +17,8 @@ const locales = [
         ubicacion: "Local 101",
         telefono: "(123) 111-1111",
         horario: "10:00 - 22:00",
-        enlace: "https://facundorospide.github.io/local-comercial-compu-garden---2da-entrega/index.html"
+        enlace: "https://facundorospide.github.io/local-comercial-compu-garden---2da-entrega/index.html",
+        imagen: "imagenes/Compugardenlogo.png"
     },
     {
         id: 2,
@@ -28,7 +29,8 @@ const locales = [
         ubicacion: "Local 205",
         telefono: "(123) 222-2222",
         horario: "10:00 - 22:00",
-        enlace: "https://mcederr.github.io/heromarket/"
+        enlace: "https://mcederr.github.io/heromarket/",
+        imagen: "imagenes/HeroMarketlogo.png"
     },
     {
         id: 3,
@@ -39,7 +41,8 @@ const locales = [
         ubicacion: "Local 301",
         telefono: "(123) 333-3333",
         horario: "10:00 - 22:00",
-        enlace: "https://facunacca.github.io/TPO-Local-Comercial-Dimmens/"
+        enlace: "https://facunacca.github.io/TPO-Local-Comercial-Dimmens/",
+        imagen: "imagenes/Dimmonslogo.png"
     },
     {
         id: 4,
@@ -50,7 +53,8 @@ const locales = [
         ubicacion: "Local 412",
         telefono: "(123) 444-4444",
         horario: "10:00 - 22:00",
-        enlace: "https://valenurcullu.github.io/CafeteriaBrewHaven/index.html"
+        enlace: "https://valenurcullu.github.io/CafeteriaBrewHaven/index.html",
+        imagen: "imagenes/brewhavenlogo.png"
     },
     {
         id: 5,
@@ -61,7 +65,8 @@ const locales = [
         ubicacion: "Local 501",
         telefono: "(123) 555-5555",
         horario: "10:00 - 22:00",
-        enlace: "https://maxmart27.github.io/CelWell---Figma/index.html"
+        enlace: "https://maxmart27.github.io/CelWell---Figma/index.html",
+        imagen: "imagenes/celwell logo.webp"
     }
 ];
 
@@ -95,6 +100,7 @@ function inicializarMapaInteractivo() {
                 // Actualizar contenido del modal con información del local
                 modalTitle.textContent = local.nombre;
                 modalBody.innerHTML = `
+                    ${local.imagen ? `<img src="${local.imagen}" alt="Imagen de ${local.nombre}" class="img-fluid mb-3 rounded" loading="lazy" onerror="this.style.display='none'">` : ''}
                     <div class="mb-3">
                         <h3 class="h5">${local.nombre}</h3>
                         <p class="text-muted mb-2">
@@ -630,7 +636,10 @@ function cargarListadoLocales() {
         html += `
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body">
+                    <div class="card-img-container bg-light d-flex align-items-center justify-content-center" style="height: 250px; overflow: hidden;">
+                        ${local.imagen ? `<img src="${local.imagen}" alt="Imagen de ${local.nombre}" class="card-img-top img-fluid" style="max-width: 100%; max-height: 100%; object-fit: contain;" loading="lazy" onerror="this.style.display='none'">` : '<div class="text-muted"><i class="bi bi-image" aria-hidden="true"></i></div>'}
+                    </div>
+                    <div class="card-body d-flex flex-column">
                         <h3 class="h5 card-title">
                             <i class="bi bi-shop text-primary" aria-hidden="true"></i> ${local.nombre}
                         </h3>
