@@ -67,7 +67,44 @@ const locales = [
         horario: "10:00 - 22:00",
         enlace: "https://maxmart27.github.io/CelWell---Figma/index.html",
         imagen: "imagenes/celwell logo.webp"
+    },
+    {
+        id: 6,
+        nombre: "Fashion Plus",
+        categoria: "Ropa y Accesorios",
+        descripcion: "Tienda de moda con las últimas tendencias en ropa casual, deportiva y formal. Marcas reconocidas con la mejor calidad. Asesoramiento personalizado para encontrar tu estilo.",
+        piso: "Primer Piso",
+        ubicacion: "Local 215",
+        telefono: "(123) 666-6666",
+        horario: "10:00 - 22:00",
+        enlace: "#",
+        imagen: "imagenes/fashionPluslogo.png"
+    },
+    {
+        id: 7,
+        nombre: "TechZone",
+        categoria: "Electrónica y Gadgets",
+        descripcion: "Últimos modelos en smartphones, tablets, laptops y accesorios tecnológicos. Garantía extendida, servicio técnico y planes de financiación disponibles.",
+        piso: "Planta Baja",
+        ubicacion: "Local 102",
+        telefono: "(123) 777-7777",
+        horario: "10:00 - 22:00",
+        enlace: "#",
+        imagen: "imagenes/techzonelogo.jpg"
+    },
+    {
+        id: 8,
+        nombre: "Green Market",
+        categoria: "Alimentos y Almacén",
+        descripcion: "Mercado fresco con productos orgánicos, verduras, frutas, lácteos y almacén. Promociones especiales en compras por volumen. Entrega a domicilio disponible.",
+        piso: "Planta Baja",
+        ubicacion: "Local 103",
+        telefono: "(123) 888-8888",
+        horario: "08:00 - 22:00",
+        enlace: "#",
+        imagen: "imagenes/greenmarketlogo.jpg"
     }
+
 ];
 
 // ============================================
