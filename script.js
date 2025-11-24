@@ -1,12 +1,3 @@
-/*
- * JavaScript para Centro Comercial Plaza Central
- * Funcionalidades: mapa interactivo con hotspots, buscador, chatbot y validación de formularios
- */
-
-// ============================================
-// Datos de los Locales Comerciales
-// ============================================
-// Base de datos de locales con información para el mapa y buscador
 const locales = [
     {
         id: 1,
@@ -107,14 +98,6 @@ const locales = [
 
 ];
 
-// ============================================
-// Funcionalidad del Mapa Interactivo con Hotspots
-// ============================================
-
-/**
- * Inicializa los eventos de los hotspots del mapa
- * Cada hotspot muestra información del local al hacer clic
- */
 function inicializarMapaInteractivo() {
     const hotspots = document.querySelectorAll('.hotspot');
     const modal = new bootstrap.Modal(document.getElementById('localModal'));
@@ -122,19 +105,15 @@ function inicializarMapaInteractivo() {
     const modalTitle = document.getElementById('localModalLabel');
     const modalLink = document.getElementById('modal-link');
 
-    // Agregar evento click a cada hotspot
     hotspots.forEach(hotspot => {
         hotspot.addEventListener('click', function() {
             const localId = parseInt(this.getAttribute('data-local-id'));
             const local = locales.find(l => l.id === localId);
 
             if (local) {
-                // Remover clase active de todos los hotspots
                 hotspots.forEach(h => h.classList.remove('active'));
-                // Agregar clase active al hotspot clickeado
                 this.classList.add('active');
 
-                // Actualizar contenido del modal con información del local
                 modalTitle.textContent = local.nombre;
                 modalBody.innerHTML = `
                     ${local.imagen ? `<img src="${local.imagen}" alt="Imagen de ${local.nombre}" class="img-fluid mb-3 rounded" loading="lazy" onerror="this.style.display='none'">` : ''}
@@ -167,15 +146,12 @@ function inicializarMapaInteractivo() {
                     </div>
                 `;
 
-                // Configurar enlace al sitio del local
                 modalLink.href = local.enlace;
                 modalLink.textContent = `Visitar sitio de ${local.nombre}`;
                 modalLink.setAttribute('aria-label', `Ir al sitio web de ${local.nombre}`);
 
-                // Mostrar modal
                 modal.show();
 
-                // Agregar efecto de pulso al hotspot
                 this.classList.add('pulse');
                 setTimeout(() => {
                     this.classList.remove('pulse');
@@ -183,7 +159,6 @@ function inicializarMapaInteractivo() {
             }
         });
 
-        // Soporte para navegación por teclado (accesibilidad)
         hotspot.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -193,45 +168,32 @@ function inicializarMapaInteractivo() {
     });
 }
 
-// ============================================
-// Funcionalidad del Buscador de Locales
-// ============================================
-
-/**
- * Inicializa el buscador de locales
- * Permite buscar por nombre o categoría y resalta resultados
- */
 function inicializarBuscador() {
     const searchInput = document.getElementById('search-local');
     const searchButton = document.getElementById('btn-buscar');
     const searchResults = document.getElementById('search-results');
     const searchForm = searchInput ? searchInput.closest('.input-group') : null;
 
-    // Función para realizar la búsqueda
     function buscarLocales(termino) {
         const terminoLower = termino.toLowerCase().trim();
         
         if (terminoLower === '') {
             searchResults.innerHTML = '';
-            // Remover resaltado de todos los hotspots
             document.querySelectorAll('.hotspot').forEach(h => {
                 h.classList.remove('active');
             });
             return;
         }
 
-        // Filtrar locales que coincidan con el término de búsqueda
         const resultados = locales.filter(local => 
             local.nombre.toLowerCase().includes(terminoLower) ||
             local.categoria.toLowerCase().includes(terminoLower) ||
             local.descripcion.toLowerCase().includes(terminoLower)
         );
 
-        // Mostrar resultados
         mostrarResultadosBusqueda(resultados, terminoLower);
     }
 
-    // Función para mostrar los resultados de búsqueda
     function mostrarResultadosBusqueda(resultados, termino) {
         if (resultados.length === 0) {
             searchResults.innerHTML = `
@@ -240,14 +202,12 @@ function inicializarBuscador() {
                     No se encontraron locales que coincidan con "${termino}"
                 </div>
             `;
-            // Remover resaltado
             document.querySelectorAll('.hotspot').forEach(h => {
                 h.classList.remove('active');
             });
             return;
         }
 
-        // Crear HTML de resultados
         let html = '<div class="list-group">';
         resultados.forEach(local => {
             html += `
@@ -266,15 +226,13 @@ function inicializarBuscador() {
 
         searchResults.innerHTML = html;
 
-        // Agregar eventos a los resultados para resaltar en el mapa (sin abrir modal)
         const resultItems = searchResults.querySelectorAll('.search-result-item');
         resultItems.forEach(item => {
             item.addEventListener('click', function() {
                 const localId = parseInt(this.getAttribute('data-local-id'));
-                resaltarHotspotEnMapa(localId, false); // false = no abrir modal
+                resaltarHotspotEnMapa(localId, false);
             });
 
-            // Soporte para teclado
             item.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
@@ -283,34 +241,26 @@ function inicializarBuscador() {
             });
         });
 
-        // Resaltar el primer resultado en el mapa automáticamente (sin abrir modal)
         if (resultados.length > 0) {
-            resaltarHotspotEnMapa(resultados[0].id, false); // false = no abrir modal
+            resaltarHotspotEnMapa(resultados[0].id, false);
         }
     }
 
-    // Función para resaltar texto en resultados
     function resaltarTexto(texto, termino) {
         const regex = new RegExp(`(${termino})`, 'gi');
         return texto.replace(regex, '<mark>$1</mark>');
     }
 
-    // Función para resaltar hotspot en el mapa
-    // abrirModal: true si debe abrir el modal (click directo en mapa), false si solo resalta
     function resaltarHotspotEnMapa(localId, abrirModal = true) {
-        // Remover active de todos los hotspots
         document.querySelectorAll('.hotspot').forEach(h => {
             h.classList.remove('active');
         });
 
-        // Agregar active al hotspot correspondiente
         const hotspot = document.querySelector(`.hotspot[data-local-id="${localId}"]`);
         if (hotspot) {
             hotspot.classList.add('active');
-            // Scroll suave hacia el mapa
             hotspot.scrollIntoView({ behavior: 'smooth', block: 'center' });
             
-            // Solo abrir modal si se especifica (click directo en el mapa)
             if (abrirModal) {
                 setTimeout(() => {
                     hotspot.click();
@@ -319,7 +269,6 @@ function inicializarBuscador() {
         }
     }
 
-    // Event listeners para el buscador
     if (searchButton) {
         searchButton.addEventListener('click', function() {
             buscarLocales(searchInput.value);
@@ -327,7 +276,6 @@ function inicializarBuscador() {
     }
 
     if (searchInput) {
-        // Buscar mientras se escribe (con debounce para mejor rendimiento)
         let timeout;
         searchInput.addEventListener('input', function() {
             clearTimeout(timeout);
@@ -336,7 +284,6 @@ function inicializarBuscador() {
             }, 300);
         });
 
-        // Buscar con Enter
         searchInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
@@ -346,14 +293,6 @@ function inicializarBuscador() {
     }
 }
 
-// ============================================
-// Funcionalidad del ChatBot
-// ============================================
-
-/**
- * Inicializa el chatbot con respuestas automáticas
- * Simula un asistente virtual con respuestas predefinidas
- */
 function inicializarChatBot() {
     const chatForm = document.getElementById('chat-form');
     const chatInput = document.getElementById('chat-input');
@@ -361,7 +300,6 @@ function inicializarChatBot() {
     const quickQuestions = document.querySelectorAll('.quick-question');
     const toggleChat = document.getElementById('toggle-chat');
 
-    // Base de conocimiento del chatbot
     const respuestas = {
         'horario': {
             texto: 'El centro comercial está abierto de lunes a viernes de 10:00 a 22:00, y sábados y domingos de 10:00 a 23:00.',
@@ -392,7 +330,6 @@ function inicializarChatBot() {
         }
     };
 
-    // Función para agregar mensaje al chat
     function agregarMensaje(texto, esUsuario = false) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `chat-message ${esUsuario ? 'user-message' : 'bot-message'} mb-3`;
@@ -418,15 +355,12 @@ function inicializarChatBot() {
         }
 
         chatContainer.appendChild(messageDiv);
-        // Scroll automático al final del chat
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
-    // Función para procesar pregunta y obtener respuesta
     function obtenerRespuesta(pregunta) {
         const preguntaLower = pregunta.toLowerCase();
         
-        // Buscar coincidencia en las respuestas
         for (const [clave, respuesta] of Object.entries(respuestas)) {
             if (clave === 'defecto') continue;
             
@@ -435,11 +369,9 @@ function inicializarChatBot() {
             }
         }
 
-        // Si no hay coincidencia, devolver respuesta por defecto
         return respuestas.defecto.texto;
     }
 
-    // Event listener para el formulario del chat
     if (chatForm) {
         chatForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -450,11 +382,9 @@ function inicializarChatBot() {
                 return;
             }
 
-            // Agregar mensaje del usuario
             agregarMensaje(pregunta, true);
             chatInput.value = '';
 
-            // Simular delay de respuesta del bot (mejora UX)
             setTimeout(() => {
                 const respuesta = obtenerRespuesta(pregunta);
                 agregarMensaje(respuesta, false);
@@ -462,20 +392,17 @@ function inicializarChatBot() {
         });
     }
 
-    // Event listeners para preguntas rápidas
     quickQuestions.forEach(button => {
         button.addEventListener('click', function() {
             const pregunta = this.getAttribute('data-question');
             chatInput.value = pregunta;
             
-            // Trigger submit del formulario
             if (chatForm) {
                 chatForm.dispatchEvent(new Event('submit'));
             }
         });
     });
 
-    // Toggle para expandir/contraer chat (opcional)
     if (toggleChat) {
         let isExpanded = true;
         toggleChat.addEventListener('click', function() {
@@ -494,50 +421,33 @@ function inicializarChatBot() {
     }
 }
 
-// ============================================
-// Validación de Formulario de Contacto
-// ============================================
-
-/**
- * Inicializa la validación del formulario de contacto
- * Valida campos requeridos y formato de email
- * Los errores solo se muestran cuando se pierde el foco (blur), no desde el inicio
- */
 function inicializarValidacionFormulario() {
     const form = document.getElementById('contact-form');
     const mensajeExito = document.getElementById('mensaje-exito');
 
     if (!form) return;
 
-    // Asegurar que el formulario no tenga la clase was-validated desde el inicio
     form.classList.remove('was-validated');
 
-    // Obtener todos los campos requeridos
     const campos = form.querySelectorAll('input[required], select[required], textarea[required]');
     
-    // Ocultar todos los mensajes de error inicialmente
     const mensajesError = form.querySelectorAll('.invalid-feedback');
     mensajesError.forEach(mensaje => {
         mensaje.style.display = 'none';
     });
     
-    // Limpiar cualquier estado de validación inicial y marcar que el campo no ha sido tocado
     campos.forEach(campo => {
         campo.classList.remove('is-invalid', 'is-valid');
-        campo.setAttribute('data-touched', 'false'); // Marcar que no ha sido tocado
+        campo.setAttribute('data-touched', 'false');
         
-        // Validar solo cuando se pierde el foco (blur), no desde el inicio
         campo.addEventListener('blur', function() {
-            this.setAttribute('data-touched', 'true'); // Marcar como tocado
+            this.setAttribute('data-touched', 'true');
             validarCampo(this);
         });
 
-        // Limpiar estado de validación mientras el usuario escribe (solo si ya estaba invalidado)
         campo.addEventListener('input', function() {
             if (this.classList.contains('is-invalid')) {
-                // Si empieza a escribir en un campo inválido, limpiar el error
                 this.classList.remove('is-invalid');
-                // Ocultar el mensaje de error
                 const feedback = this.parentElement.querySelector('.invalid-feedback');
                 if (feedback) {
                     feedback.style.display = 'none';
@@ -546,7 +456,6 @@ function inicializarValidacionFormulario() {
         });
     });
 
-    // Validación del email (solo al perder foco)
     const emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('blur', function() {
@@ -560,13 +469,11 @@ function inicializarValidacionFormulario() {
                 this.classList.remove('is-invalid');
                 this.classList.add('is-valid');
             } else {
-                // Si está vacío, usar la validación estándar
                 validarCampo(this);
             }
         });
     }
 
-    // Función para validar un campo individual
     function validarCampo(campo) {
         const fueTocado = campo.getAttribute('data-touched') === 'true';
         const feedback = campo.parentElement.querySelector('.invalid-feedback');
@@ -574,21 +481,17 @@ function inicializarValidacionFormulario() {
         if (campo.checkValidity()) {
             campo.classList.remove('is-invalid');
             campo.classList.add('is-valid');
-            // Ocultar mensaje de error si existe
             if (feedback) {
                 feedback.style.display = 'none';
             }
         } else {
-            // Solo mostrar error si el campo ha sido tocado
             if (fueTocado) {
                 campo.classList.remove('is-valid');
                 campo.classList.add('is-invalid');
-                // Mostrar mensaje de error
                 if (feedback) {
                     feedback.style.display = 'block';
                 }
             } else {
-                // Si no ha sido tocado, no mostrar error visual
                 campo.classList.remove('is-invalid', 'is-valid');
                 if (feedback) {
                     feedback.style.display = 'none';
@@ -597,12 +500,10 @@ function inicializarValidacionFormulario() {
         }
     }
 
-    // Validación al enviar formulario
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         e.stopPropagation();
 
-        // Validar todos los campos
         let esValido = true;
         campos.forEach(campo => {
             validarCampo(campo);
@@ -611,12 +512,10 @@ function inicializarValidacionFormulario() {
             }
         });
 
-        // Validar checkbox de términos
         const aceptoCheckbox = document.getElementById('acepto');
         if (aceptoCheckbox && !aceptoCheckbox.checked) {
             aceptoCheckbox.classList.add('is-invalid');
             aceptoCheckbox.setAttribute('data-touched', 'true');
-            // Mostrar mensaje de error del checkbox
             const feedbackCheckbox = aceptoCheckbox.parentElement.querySelector('.invalid-feedback');
             if (feedbackCheckbox) {
                 feedbackCheckbox.style.display = 'block';
@@ -631,21 +530,15 @@ function inicializarValidacionFormulario() {
         }
 
         if (esValido) {
-            // Simular envío del formulario
-            // En una aplicación real, aquí se enviarían los datos al servidor
-            
-            // Mostrar mensaje de éxito
             if (mensajeExito) {
                 mensajeExito.classList.remove('d-none');
                 mensajeExito.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 
-                // Resetear formulario
                 form.reset();
                 campos.forEach(campo => {
                     campo.classList.remove('is-valid', 'is-invalid');
                 });
                 
-                // Ocultar mensaje después de 5 segundos
                 setTimeout(() => {
                     mensajeExito.classList.add('d-none');
                 }, 5000);
@@ -656,13 +549,6 @@ function inicializarValidacionFormulario() {
     });
 }
 
-// ============================================
-// Carga de Listado de Locales
-// ============================================
-
-/**
- * Carga dinámicamente el listado de locales en la página
- */
 function cargarListadoLocales() {
     const localesList = document.getElementById('locales-list');
     
@@ -708,44 +594,26 @@ function cargarListadoLocales() {
     localesList.innerHTML = html;
 }
 
-// ============================================
-// Inicialización al Cargar la Página
-// ============================================
-
-/**
- * Función principal que se ejecuta cuando el DOM está listo
- * Inicializa todas las funcionalidades según la página actual
- */
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar mapa interactivo (solo en página de locales)
     if (document.getElementById('map-container')) {
         inicializarMapaInteractivo();
         cargarListadoLocales();
     }
 
-    // Inicializar buscador (solo en página de locales)
     if (document.getElementById('search-local')) {
         inicializarBuscador();
     }
 
-    // Inicializar chatbot (solo en página de contacto)
     if (document.getElementById('chat-form')) {
         inicializarChatBot();
     }
 
-    // Inicializar validación de formulario (solo en página de contacto)
     if (document.getElementById('contact-form')) {
         inicializarValidacionFormulario();
     }
 });
 
-// ============================================
-// Mejoras de Accesibilidad
-// ============================================
-
-// Skip link para navegación por teclado
 document.addEventListener('DOMContentLoaded', function() {
-    // Agregar skip link si no existe
     if (!document.querySelector('.skip-link')) {
         const skipLink = document.createElement('a');
         skipLink.href = '#main-content';
@@ -755,9 +623,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Manejo de focus para mejor accesibilidad
 document.addEventListener('keydown', function(e) {
-    // Atajo de teclado para ir al buscador (Ctrl/Cmd + K)
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         const searchInput = document.getElementById('search-local');
         if (searchInput) {
@@ -766,4 +632,3 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
-
