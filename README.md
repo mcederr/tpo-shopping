@@ -61,16 +61,4 @@ La navegación está pensada para ser fluida, con las siguientes secciones clave
 
 ---
 
-## 📞 Contacto y Horarios
-
-**Centro Comercial Plaza Central**
-* 📍 Av. Principal 1234, Ciudad
-* 📞 (123) 456-7890
-* 📧 info@plazacentral.com
-
-**Horarios de Atención:**
-* Lunes a Viernes: 10:00 - 22:00
-* Sábados y Domingos: 10:00 - 22:00
-
----
 © 2024 Centro Comercial Plaza Central. Todos los derechos reservados.
