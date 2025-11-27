@@ -50,15 +50,4 @@ Este proyecto fue realizado gracias a la colaboración entre las áreas de Dise�
 
 ---
 
-## 📂 Estructura del Sitio
-
-La navegación está pensada para ser fluida, con las siguientes secciones clave:
-1.  **Inicio:** Hero section con call-to-action ("Descubre más").
-2.  **Bienvenida:** Resumen de servicios (Locales, Cines, Parking).
-3.  **Multimedia:** Video promocional de las instalaciones.
-4.  **Funcionalidades:** Accesos directos a Mapa, Buscador y Ofertas.
-5.  **Footer:** Datos de contacto, redes sociales y horarios.
-
----
-
 © 2024 Centro Comercial Plaza Central. Todos los derechos reservados.
