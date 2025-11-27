@@ -9,7 +9,7 @@ Bienvenido al repositorio oficial del sitio web de **Plaza Central**. Este proye
 ## 📸 Vista Previa del Proyecto
 
 ![Landing Page Plaza Central](imagen.png)
-*(El diseño presenta una interfaz "Dark Mode" elegante, priorizando la legibilidad y la navegación intuitiva)*
+*(El diseño presenta una interfaz elegante, priorizando la legibilidad y la navegación intuitiva)*
 
 ---
 
